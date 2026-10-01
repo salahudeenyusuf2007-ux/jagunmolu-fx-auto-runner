@@ -1,0 +1,16 @@
+name: JAGUNMOLU FX Auto Signal
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  auto-signal:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger JAGUNMOLU FX signal engine
+        run: |
+          curl -fsS -X POST \
+            "https://jagunmolu-signal.floot.app/_api/market/autoSignal"
