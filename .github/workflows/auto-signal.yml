@@ -13,4 +13,4 @@ jobs:
       - name: Trigger JAGUNMOLU FX signal engine
         run: |
           curl -fsS -X POST \
-            "https://jagunmolu-signal.floot.app/_api/market/autoSignal"
+            "https://jagunmolu-fx-ai-signal-bot.floot.app/_api/ai/scan"
