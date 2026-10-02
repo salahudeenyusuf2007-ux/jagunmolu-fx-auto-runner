@@ -12,5 +12,11 @@ jobs:
     steps:
       - name: Trigger JAGUNMOLU FX signal engine
         run: |
-          curl -fsS -X POST \
+          curl --fail --silent --show-error \
+            --request POST \
+            --connect-timeout 15 \
+            --max-time 60 \
+            --retry 5 \
+            --retry-delay 10 \
+            --retry-all-errors \
             "https://jagunmolu-fx-ai-signal-bot.floot.app/_api/ai/scan"
